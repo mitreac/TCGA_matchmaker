@@ -1,2 +1,2 @@
-# project576
-project for the bioinf 576 class 
+# TCGA matchmaker
+Matching a gene expression profile in TCGA cancer samples
