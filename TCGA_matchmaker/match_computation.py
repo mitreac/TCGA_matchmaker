@@ -2,10 +2,12 @@ import numpy as np
 import pandas as pd
 
 def read_expr_profile(file_name):
+	# implemented
 	profile_data = pd.read_csv(file_name, sep = "\t")
 	return profile_data
 
 def read_TCGA_sample(file_name):
+	# implemented
 	sample_data = None
 	# read sample data
 	return sample_data
