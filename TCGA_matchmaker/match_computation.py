@@ -20,12 +20,12 @@ def test_match(profile, sample_data, threshold):
 		is_match = distance < threshold
 	return is_match
 
-def check_profile(profile, sample_data)
+def check_profile(profile, sample_data):
 	is_present = False
 	# check if all genes in the profile are present
 	return is_present
 
-def compute_distance(profile, sample_data)
+def compute_distance(profile, sample_data):
 	distance = 0
 	# compute distance here
 	return distance
