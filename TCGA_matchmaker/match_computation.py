@@ -12,7 +12,7 @@ def read_TCGA_sample(file_name):
 	# read sample data
 	return sample_data
 
-def test_match(profile, sample_data, threshold):
+def check_match(profile, sample_data, threshold):
 	is_match = False
 	is_present = check_profile(profile, sample_data)
 	if is_present:
@@ -50,6 +50,6 @@ def compute_distance(profile, sample_data):
 	overlap_no = len(intersection)
 	smaller_set_no = min(len(set1), len(set2))
 	perc_overlap = overlap_no/smaller_set_no
-	if (perc_overlap > 0.8):
-		distance = sum(sample_data[intersection] - profile[intersection])
+	if (perc_overlap > 0.6):
+		distance = sum(abs(sample_data[intersection] - profile[intersection]))
 	return distance
