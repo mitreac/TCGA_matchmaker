@@ -78,3 +78,12 @@ def compute_match_scores(samples_data, profile):
 
 	match_scores = samples_data.apply(compute_distance, axis = 0, profile = profile)
 	return match_scores
+
+
+def hello_there(x):
+	"""
+	Funtion to say hello
+	"""	
+	message = "Hello, there, " + x +  "!"
+	return message
+

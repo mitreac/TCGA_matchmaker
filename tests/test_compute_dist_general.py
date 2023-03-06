@@ -1,6 +1,13 @@
 from TCGA_matchmaker import match_computation as m
 import pandas as pd 
 
+def test_hello():
+	expected_result = "Hello, there, BIOINF 576!"
+	computed_result = m.hello_there("BIOINF 576")
+	print(computed_result)
+	assert expected_result == computed_result, "The expected result does not match the computed one"
+
+
 def test_compute_dist_gen():
 	profile = pd.Series([2,3,4], index = ["g1","g2","g3"])
 	sample_data = pd.Series([2,4,4,5], index = ["g1","g2","g4","g5"])
