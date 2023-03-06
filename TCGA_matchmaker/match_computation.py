@@ -25,7 +25,7 @@ def check_profile(profile, sample_data):
 	# check if all genes in the profile are present
 	return is_present
 
-def compute_distance(profile, sample_data):
+def compute_distance(sample_data, profile):
 	"""
 	Compute the distance between the reference expression profile 
 	and a sample expression profile
@@ -51,5 +51,30 @@ def compute_distance(profile, sample_data):
 	smaller_set_no = min(len(set1), len(set2))
 	perc_overlap = overlap_no/smaller_set_no
 	if (perc_overlap > 0.6):
-		distance = sum(abs(sample_data[intersection] - profile[intersection]))
+		distance = sum(abs(sample_data[list(intersection)] - profile[list(intersection)]))
 	return distance
+
+
+
+def compute_match_scores(samples_data, profile):
+	"""
+	Compute the distance between the reference expression profile 
+	and a sample expression profile
+
+	Parameters:
+		profile (pandas.Series): a pandas series with the reference profile
+								data is the expression level, 
+								rownames are gene symbols or IDs
+		samples_data(pandas.DataFrame): a pandas dataframe with the saples data
+								it contains a sample profile (expression level) 
+								on each column, and rownames are gene symbols or IDs
+
+	Returns (pandas.Series): match score - a pandas series with numerical values, i.e. match scores, 
+									where a match score is a distance type metric that shows 
+									how close the profiles are 0 would be minimum and 1 would 
+									be maximum 
+
+	"""	
+
+	match_scores = samples_data.apply(compute_distance, axis = 0, profile = profile)
+	return match_scores
