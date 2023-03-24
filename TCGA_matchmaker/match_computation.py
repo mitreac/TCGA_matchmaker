@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 def read_expr_profile(file_name):
-	# implemented
+	# initial implementation
 	profile_data = pd.read_csv(file_name, sep = "\t")
 	return profile_data
 
