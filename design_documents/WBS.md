@@ -12,4 +12,4 @@ Work breakdown structure document - TCGA match maker
     - Task 2.2.1: Define read/create data function
     - Task 2.2.2: Define analysis function
     - Task 2.2.3: Define save output function
-  - Activity 2.3: Finishing the interior
+  - Activity 2.3: Test prototype
