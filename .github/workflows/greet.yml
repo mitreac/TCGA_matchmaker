@@ -5,13 +5,11 @@ name: greet
 on:
   push:
     branches:
-      - main
-      - master
+      - W24
   pull_request:
     branches:
-      - main
-      - master
-
+      - W24
+      
 # independent jobs in the workflow
 jobs:
   # this workflow just has one job called "greet"
